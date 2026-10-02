@@ -1,16 +1,46 @@
-# React + Vite
+# MAX Chat — тестовое задание
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+SPA-приложение на React для обмена текстовыми сообщениями в мессенджере MAX через GREEN-API.
 
-Currently, two official plugins are available:
+## Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 18** + **Vite**
+- **Zustand** — управление состоянием + persist в localStorage
+- **Axios** — HTTP-клиент
+- **Vanilla CSS** — стилизация в тёмной теме MAX
 
-## React Compiler
+## Возможности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Авторизация по `idInstance` и `apiTokenInstance` из GREEN-API
+- Сохранение сессии в `localStorage` (не выкидывает при перезагрузке)
+- Проверка существования аккаунта MAX по номеру телефона (`checkAccount`)
+- Отправка текстовых сообщений (`sendMessage`)
+- Получение входящих сообщений через Long Polling (`receiveNotification` + `deleteNotification`)
+- Тёмная тема в стиле MAX
 
-## Expanding the Oxlint configuration
+## Локальный запуск
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Требования
+
+- Node.js 18+
+- npm
+
+### Установка
+
+```bash
+git clone https://github.com/arsenkarapetyan04-netizen/react-max-chat.git
+cd react-max-chat
+npm install
+
+### Запуск dev-сервера
+
+```bash
+npm run dev
+```
+
+Открой http://localhost:5173
+
+### Сборка
+
+```bash
+npm run build
